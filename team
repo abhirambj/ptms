@@ -1,0 +1,140 @@
+use team;
+
+create table student(usn varchar(12) primary key,sname varchar(30),branch varchar(10),sem int, cgpa float,skills varchar(30),email varchar(40),phone long);
+
+
+create table faculty(fid int primary key,fname varchar(30), branch varchar(10),intrest varchar(30),exp int,email varchar(30),phone long);
+
+create table skills(sskill varchar(30),fintrest varchar(30));
+
+create table team(tid int primary key,members varchar(100), faculty varchar(30),pro_leader varchar(30));
+
+
+create table project(pname  varchar(30),pleader varchar(30),batch year,faculty varchar(30));
+
+create table login(username varchar(100),email varchar(100),password varchar(100),privileges varchar(100) default 4);
+
+
+insert into student values('4gh17cs001','Abhiram','cs',5,8.0,'html','abhiram@gmail.com',6547819911);
+insert into student values('4gh17cs003','Aishwarya','cs',5,8.9,'python','aishwarya@gmail.com',9855426511);
+insert into student values('4gh17cs016','Gowtham','cs',5,8.01,'java','gowtham@gmail.com',8861149911);
+insert into student values('4gh17cs018','Impana','cs',5,8.4,'c++','impu@gmail.com',8297008850);
+insert into student values('4gh17cs026','Meghana','cs',5,8.3,'php','meghana@gmail.com',9844865436);
+
+insert into student values('4gh17cs404','aAbhiram','cs',5,5.02,'html','abhiram@gmail.com',6547819911);
+insert into student values('4gh17cs406','aAishwarya','cs',5,6.9,'python','aishwarya@gmail.com',9855426511);
+insert into student values('4gh17cs415','aGowtham','cs',5,2.0,'java','gowtham@gmail.com',8861149911);
+insert into student values('4gh17cs413','aImpana','cs',5,6.66,'c++','impu@gmail.com',8297008850);
+insert into student values('4gh17cs416','aMeghana','cs',5,4.35,'php','meghana@gmail.com',9844865436);
+
+
+insert into faculty values(11,'raghu','cs','html',10,'raghu@gmail.com',9867003403);
+insert into faculty values(22,'Annaiah','cs','python',8,'annaiah@gmail.com',8600559680);
+insert into faculty values(33,'Cheathan','cs','php',7,'chethan@gmail.com',9145658570);
+insert into faculty values(44,'Rangnath','cs','c++',9,'rangnath@gmail.com',8296889920);
+insert into faculty values(55,'Priyanka','cs','java',5,'priyanka@gmail.com',9625003390);
+
+insert into skills values('html','html');
+insert into skills values('python','python');
+insert into skills values('java','php');
+insert into skills values('c++','c++');
+insert into skills values('php','java');
+
+
+insert into team values(1,'Aishwarya Impana','Raghu','Impana');
+insert into team values(2,'Abhiram Meghana','Annaiah','Abhiram');
+insert into team values(3,'Gowtham Abhiram','Rangnath','Gowtham');
+insert into team values(4,'Aishwarya Abhiram','Priyanka','Aishwarya');
+insert into team values(5,'Meghana Aishwarya','Chethan','Meghana');
+
+insert into project values('IOT','Impana',2015,'Raghu');
+insert into project values('computer networks','Abhiram',2016,'Annaiah');
+insert into project values('Web','Gowtham',2015,'Rangnath');
+insert into project values('App','Aishwarya',2014,'Priyanka');
+insert into project values('AI','Meghana',2014,'Chethan');
+
+
+insert into login values('Abhiram','abhiram@gmail.com','12@#4', 2);
+insert into login values('Aishwarya','aishwarya@gmail.com','21@#4', 1);
+insert into login values('Meghana','meghana@gmail.com','54@#4', 2);
+insert into login values('Gowtham','gowtham@gmail.com','76@#4', 2);
+insert into login values('Impana','impana@gmail.com','34@#4', 2);
+
+
+
+insert into student values('4gh17cs001','Abhiram','cs',5,8.03,'html','abhiram@gmail.com',6547819911);
+insert into student values('4gh17cs003','Aishwarya jain','cs',5,8.93,'python','aishwarya@gmail.com',9855426511);
+insert into student values('4gh17cs016','Gowtham','cs',5,8.01,'java','gowtham@gmail.com',8861149911);
+insert into student values('4gh17cs018','Impana','cs',5,8.46,'c++','impu@gmail.com',8297008850);
+insert into student values('4gh17cs026','Meghana','cs',5,8.39,'php','meghana@gmail.com',9844865436);
+insert into student values('4gh17cs004','Akshatha','cs',5,8.06,'html','akshatha@gmail.com',9847819911);
+insert into student values('4gh17cs005','Akshay','cs',5,8.91,'python','akshay@gmail.com',9856426511);
+insert into student values('4gh17cs006','Anagha','cs',5,8.02,'java','anagha@gmail.com',8865009911);
+insert into student values('4gh17cs007','Archana','cs',5,8.42,'c++','archana@gmail.com',8297008850);
+insert into student values('4gh17cs008','Anil','cs',5,6.32,'php','anil@gmail.com',8744865436);
+insert into student values('4gh17cs036','Renukaprasad','cs',5,8.52,'html','renukap@gmail.com',8857819911);
+insert into student values('4gh17cs045','shilpa h m','cs',5,8.90,'python','shilpa@gmail.com',7855426511);
+insert into student values('4gh17cs032','rachana','cs',5,8.05,'java','rachana@gmail.com',9361149911);
+insert into student values('4gh17cs052','vidya a p s','cs',5,8.41,'c++','vidya@gmail.com',8297008580);
+insert into student values('4gh17cs033','rakshitha','cs',5,8.37,'php','rakshitha@gmail.com',7844865435);
+insert into student values('4gh17cs022','minchu','cs',5,7.06,'html','minchu@gmail.com',9547819910);
+insert into student values('4gh17cs053','vidya h','cs',5,6.96,'python','vidyah@gmail.com',8855426581);
+insert into student values('4gh17cs054','sameeksha','cs',5,8.08,'java','sameeksha@gmail.com',8761149971);
+insert into student values('4gh17cs056','sindu','cs',5,8.48,'c++','sindu@gmail.com',8297008860);
+insert into student values('4gh17cs017','greeshma','cs',5,7.38,'php','greeshma@gmail.com',7844865436);
+insert into student values('4gh17cs058','vandana','cs',5,7.08,'html','vandana@gmail.com',9847819911);
+insert into student values('4gh17cs059','varshitha','cs',5,6.98,'python','varshitha@gmail.com',7855426511);
+insert into student values('4gh17cs020','kavana','cs',5,6.05,'java','kavana@gmail.com',8861149901);
+insert into student values('4gh17cs024','megha','cs',5,5.45,'c++','megha@gmail.com',7897008850);
+insert into student values('4gh17cs025','Meghana h c','cs',5,6.35,'php','meghanahc@gmail.com',9864865436);
+insert into student values('4gh17cs027','megha s p','cs',5,7.03,'html','meghasp@gmail.com',7547819911);
+insert into student values('4gh17cs009','chaitra','cs',5,8.93,'python','chaitra@gmail.com',9825426511);
+insert into student values('4gh17cs057','shilpa h v','cs',5,5.03,'java','shilpahv@gmail.com',8761149911);
+insert into student values('4gh17cs034','rohini','cs',5,8.43,'c++','rohini@gmail.com',8297008890);
+insert into student values('4gh17cs010','amreeeza','cs',5,8.33,'php','amreeza@gmail.com',9844885436);
+insert into student values('4gh17cs011','anusha','cs',5,7.012,'html','anusha@gmail.com',6547819011);
+insert into student values('4gh17cs028','meghana b r','cs',5,6.9312,'python','meghana@gmail.com',8855406511);
+insert into student values('4gh17cs012','bhoomika m','cs',5,7.0325,'java','bhoomika@gmail.com',8661149971);
+insert into student values('4gh17cs019','kavya n','cs',5,7.4346,'c++','kavya@gmail.com',8277008840);
+insert into student values('4gh17cs013','chandan','cs',5,6.3346,'php','chandan@gmail.com',8844865406);
+insert into student values('4gh17cs037','roopa','cs',5,8.054,'html','roopa@gmail.com',9547819911);
+insert into student values('4gh17cs062','umme haani','cs',5,7.9,'python','ummehaani@gmail.com',9855726511);
+insert into student values('4gh17cs002','bindu','cs',5,8.0,'java','bindu@gmail.com',8861159911);
+insert into student values('4gh17cs029','meghana s v','cs',5,7.434,'c++','meghanasv@gmail.com',8297008851);
+insert into student values('4gh17cs041','shobha','cs',5,6.354,'php','shoba@gmail.com',9844865430);
+insert into student values('4gh17cs030','manasa','cs',5,7.0536,'html','manasa@gmail.com',6547810011);
+insert into student values('4gh17cs014','bhavana','cs',5,6.943,'python','bhavana@gmail.com',9811426511);
+insert into student values('4gh17cs015','pallavi','cs',5,7.03462,'java','pallavi@gmail.com',8860059911);
+insert into student values('4gh17cs035','manoj','cs',5,6.4246,'c++','manoj@gmail.com',8297998850);
+insert into student values('4gh17cs036','megha p','cs',5,7.32346,'php','meghap@gmail.com',9855865436);
+insert into student values('4gh17cs047','sachin','cs',5,5.92346,'python','sachin@gmail.com',9844426511);
+insert into student values('4gh17cs049','chandini','cs',5,6.02364,'java','chandini@gmail.com',7860149911);
+insert into student values('4gh17cs050','mohit','cs',5,6.42364,'c++','mohit@gmail.com',8297668850);
+insert into student values('4gh17cs051','kavya s k','cs',5,5.33246,'php','kavyask@gmail.com',7844863436);
+insert into student values('4gh17cs052','poojitha','cs',5,7.0326,'html','poojitha@gmail.com',6547801911);
+insert into student values('4gh17cs053','sowndarya','cs',5,6.9643,'python','sowndarya@gmail.com',7885426511);
+insert into student values('4gh17cs054','harsha','cs',5,6.064,'java','harsha@gmail.com',7861142211);
+insert into student values('4gh17cs055','kavya','cs',5,5.4564,'c++','kavya@gmail.com',8296108850);
+insert into student values('4gh17cs056','smitha','cs',5,5.39876,'php','smitha@gmail.com',9754865436);
+insert into student values('4gh17cs067','sunil','cs',5,5.098765,'html','sunil@gmail.com',6546810911);
+insert into student values('4gh17cs068','impana a s','cs',5,7.92345,'python','impana@gmail.com',7854426511);
+insert into student values('4gh17cs069','yatheesh','cs',5,6.08765,'java','yatheesh@gmail.com',8961109911);
+insert into student values('4gh17cs060','tejaswini','cs',5,5.42353,'c++','tejaswini@gmail.com',9297108850);
+insert into student values('4gh17cs061','deepika','cs',5,6.33465,'php','deepika@gmail.com',9844865326);
+insert into student values('4gh17cs062','tejaswini kl','cs',5,6.04534,'html','tejaswinikl@gmail.com',7347819911);
+insert into student values('4gh17cs063','sachin cl','cs',5,6.943643,'python','sachincl@gmail.com',9855776511);
+insert into student values('4gh17cs064','kumar','cs',5,6.0345754,'java','kumar@gmail.com',8861149001);
+insert into student values('4gh17cs065','naveeni','cs',5,7.454734,'c++','naveeni@gmail.com',8297558850);
+insert into student values('4gh17cs066','vivek','cs',5,6.345754,'php','vivek@gmail.com',9844865401);
+insert into student values('4gh17cs067','sushmitha','cs',5,6.0474534,'html','sushmitha@gmail.com',8547810111);
+insert into student values('4gh17cs068','manikanta','cs',5,8.9437665,'python','manikanta@gmail.com',9855106511);
+insert into student values('4gh17cs069','kiran','cs',5,7.05665,'java','kiran@gmail.com',8861149001);
+insert into student values('4gh17cs070','muskan','cs',5,6.4544545,'c++','muskan@gmail.com',8297007710);
+insert into student values('4gh17cs071','likitha','cs',5,5.334634,'php','likitha@gmail.com',9844840436);
+insert into student values('4gh17cs072','preethi','cs',5,8.03465,'html','preethi@gmail.com',6547709911);
+insert into student values('4gh17cs073','ankitha','cs',5,7.9373,'python','ankitha@gmail.com',9866426511);
+insert into student values('4gh17cs074','yamuna','cs',5,8.0346,'java','yamuna@gmail.com',8861148811);
+insert into student values('4gh17cs075','manavi','cs',5,8.45457,'c++','manavi@gmail.com',8297008750);
+insert into student values('4gh17cs076','ramitha','cs',5,8.35643,'php','ramitha@gmail.com',9844865436);
+	
+	
