@@ -2,7 +2,7 @@
     include 'config.php';
         if(!empty($_POST['submit'])){
         if($_POST['pass'] === $_POST['pass2']){
-        $sql = "INSERT INTO login(username, email, password) VALUES ('$_POST[name]','$_POST[email]','$_POST[pass]')";
+        $sql = "INSERT INTO login(username, email, password) VALUES ('$_POST[username]','$_POST[email]','$_POST[pass]')";
         $conn->query($sql);
         header("location: login.php");
         }

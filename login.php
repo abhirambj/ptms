@@ -1,18 +1,37 @@
 <?php
     include 'config.php';
+    session_start();
     if(!empty($_POST['submit'])){
         $sql = "SELECT * from login where username='$_POST[name]' and password='$_POST[pass]'";
+        $username = $_POST['name'];
         $result = $conn->query($sql);
-        while ($row = $result->fetch_assoc()) {
-            $priv = $row["privileges"];
-            if($priv == 2 || $priv == 1) {
-                header('Location: admin.php');
+        $row = $result->fetch_assoc();
+        $priv = $row["privileges"];
+            if($priv == 1) {
+                $_SESSION['username'] = $_POST['name'];
+                $_SESSION['prv'] = $priv;
+                $_SESSION['success'] = "you have logged in";
+                header('location: admin.php');
             }
-        elseif ($priv == 4){
-            header('location: wait.php');
+            else if ($priv == 2) {
+                $_SESSION['username'] = $_POST['name'];
+                $_SESSION['prv'] = $priv;
+                $_SESSION['success'] = "you have logged in";
+                header('location: faculty.php');
+            }
+            else if ($priv == 3) {
+                $_SESSION['username'] = $_POST['name'];
+                $_SESSION['prv'] = $priv;
+                $_SESSION['success'] = "YOU have logged in";
+                header('location: welcome.php');
+            }
+            else if ($priv == 4){
+                $_SESSION['username'] = $_POST['name'];
+                $_SESSION['prv'] = $priv;
+                $_SESSION['success'] = "you have logged in";
+                echo "<script>alert('Wait Till The Admin AUTHENTICATES YOU...!!!')</script>";
         }
     }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +39,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/login.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>Login</title>
 </head>

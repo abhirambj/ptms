@@ -1,10 +1,29 @@
-<!DOCTYPE html>
+<?php
+include 'config.php';
+session_start();
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+  }
+
+  if (isset($_POST['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header('location: login.php');
+  }
+
+  if (isset($_SESSION['success'])) {
+   /*  echo $_SESSION['success'];  */
+    unset($_SESSION['success']);
+  }
+?>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/project.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
@@ -25,7 +44,7 @@
                     <th>Faculty Name</th>
                 </tr>
                 <?php
-                include 'config.php';
+
                 $sql = "SELECT * FROM project";
                 if ($result = $conn->query($sql)) {
                     while ($row = $result->fetch_assoc()) {

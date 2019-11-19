@@ -24,7 +24,7 @@ if (isset($_SESSION['success'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/team.css">
+  <link rel="stylesheet" href="css/admin.css">
   <title></title>
 </head>
 <body>
@@ -114,15 +114,11 @@ if (isset($_SESSION['success'])) {
                   <td>'.$row['first'].'</td>
                   <td>'.$row['second'].'</td>
                   <td>'.$row['third'].'</td>
-                  <td>'.$row['fourth'].'</td>
-                  <td><a href="editteam.php?edited=1&id='.$row['tid'].'">Edit</a></td></tr>';
+                  <td>'.$row['fourth'].'</td>';
+                  // <td><a href="editteam.php?edited=1&id='.$row['tid'].'">Edit</a></td></tr>';
                   }
                 }
         ?>
-        </table>
-        <form action="export.php" method="get">
-          <input type="submit" name="export" value="CSV Export">
-        </form>
       </div>
     </div>
 </body>

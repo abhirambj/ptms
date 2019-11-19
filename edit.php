@@ -1,11 +1,24 @@
 <?php
 include 'config.php';
+session_start();
+if (!isset($_SESSION['username'])) {
+  $_SESSION['msg'] = "You must log in first";
+  header('location: login.php');
+}
+
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header('location: login.php');
+}
+
+if (isset($_SESSION['success'])) {
+  unset($_SESSION['success']);
+}
 
 if (isset($_POST['update'])) {
 
-   $username = mysqli_real_escape_string($conn, $_POST['usrname']);
-  /* $email = mysqli_real_escape_string($_POST['email']);
-  $password = mysqli_real_escape_string($_POST['password']); */
+  $username = mysqli_real_escape_string($conn, $_POST['usrname']);
   $privileges = mysqli_real_escape_string($conn, $_POST['priveleges']);
   $up = "UPDATE login SET privileges='$privileges' WHERE username='$username'";
   if(mysqli_query($conn, $up)){
@@ -16,14 +29,7 @@ if (isset($_POST['update'])) {
   }
 }
 
-
-
-
-
-
-
 if (isset($_GET['edited'])) {
-
   $ed = "SELECT username,email,password,privileges from login where username = '{$_GET['id']}'";
   $resulted = mysqli_query($conn, $ed);
   $row = $resulted->fetch_assoc();

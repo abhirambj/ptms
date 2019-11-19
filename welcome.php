@@ -1,11 +1,28 @@
 <?php
     include 'config.php';
-    $sql = "INSERT INTO student (usn, sname, branch, sem, cgpa, skills, email, phone) VALUES ('$_POST[usn]','$_POST[sname]','$_POST[branch]','$_POST[sem]','$_POST[cgpa]','$_POST[skills]','$_POST[email]','$_POST[phone]')";
-    if ($conn->query($sql) === TRUE)
-    {
-    echo "<script>alert('Form Sucessfully Submitted Please Wait Till ADMIN Approves Your Application...!')</script>";
-    }
-    $conn->close();
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+      }
+
+      if (isset($_POST['logout'])) {
+        session_destroy();
+        unset($_SESSION['username']);
+        header('location: login.php');
+      }
+
+      if (isset($_SESSION['success'])) {
+        unset($_SESSION['success']);
+      }
+      if(isset($_POST['submit'])){
+        $sql = "INSERT INTO student (usn, sname, branch, sem, cgpa, skills, email, phone) VALUES ('$_POST[usn]','$_POST[sname]','$_POST[branch]','$_POST[sem]','$_POST[cgpa]','$_POST[skills]','$_POST[email]','$_POST[phone]')";
+        if ($conn->query($sql) === TRUE)
+        {
+          header('Location: teamview.php');
+        }
+      }
+      $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +40,7 @@
             <div class="title">
                 REGISTER YOUR ENTRY HERE
             </div>
-            <form action="" method="post">
+            <form action="welcome.php" method="post">
                 <div class="row">
                     <br>
                     <br>
@@ -57,10 +74,17 @@
              <div class="button" align="center">
                   <input type="submit" name="submit" value="REGISTER">
             </div>
-         </form>
+          </form>
+          <form class="" action="" method="post">
             <div class="button" align="center">
-                 <input type="submit" name="logout" value="LOGOUT">
-             </div>
+                  <input type="submit" name="logout" value="LOGOUT">
+            </div>
+          </form>
+          <form class="" action="edteam.php" method="post">
+            <div class="button" align="center">
+              <input type="submit" name="viewteam" value="VIEW TEAMS">
+            </div>
+          </form>
         </div>
     </div>
 </body>
