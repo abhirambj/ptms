@@ -30,7 +30,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/welcome.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>WELCOME</title>
 </head>
@@ -63,7 +63,13 @@
                   <input type="text" placeholder="Student CGPA" name="cgpa" required/>
              </div>
              <div class="textbox">
-                  <input type="text" placeholder="Student Skills" name="skills" required/>
+             <select name="skills">
+                <option value="WEB DESIGNING">WEB DESIGNING</option>
+                <option value="NETWORKING">NETWORKING</option>
+                <option value="ANDROID APPLICATION">ANDROID APPLICATION</option>
+                <option value="MACHINE LEARNING">MACHINE LEARNING</option>
+                <option value="IMAGE PROCESSING">IMAGE PROCESSING</option>
+              </select>
              </div>
              <div class="textbox">
                   <input type="email" placeholder="Student E-mail" name="email" required/>
@@ -80,7 +86,7 @@
                   <input type="submit" name="logout" value="LOGOUT">
             </div>
           </form>
-          <form class="" action="edteam.php" method="post">
+          <form class="" action="edteam2.php" method="post">
             <div class="button" align="center">
               <input type="submit" name="viewteam" value="VIEW TEAMS">
             </div>

@@ -123,6 +123,9 @@ if (isset($_SESSION['success'])) {
         <form action="export.php" method="get">
           <input type="submit" name="export" value="CSV Export">
         </form>
+        <form action="admin.php" method="POST" align="center">
+                <input type="submit" name="back" value="Back">
+        </form>
       </div>
     </div>
 </body>

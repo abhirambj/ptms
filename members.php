@@ -21,7 +21,7 @@
     </div> 
     <table><br><br><br><br>
     <tr>
-        <td><b>TEAM NUMBER</b></td>
+       
         <td><b>USN</b></td>
         <td><b>STUDENT NAME</b></td>
         <td><b>BRANCH</b></td>
@@ -38,7 +38,7 @@
             $query = "call student_sort('$usntosearch')";
             if($search_result = mysqli_query($conn,$query)){
               while($row = $search_result->fetch_assoc()){
-                      $tno = $row['tno'];
+                      // $tno = $row['tno'];
                       $usn = $row["usn"];
                       $sname = $row["sname"];
                       $branch = $row["branch"];
@@ -48,7 +48,7 @@
                       $email = $row["email"];
                       $phone = $row["phone"];
                 echo '<tr>
-                       <td>'.$tno.'</td>
+                      
                        <td>'.$usn.'</td>
                        <td>'.$sname.'</td>
                        <td>'.$branch.'</td>
@@ -66,7 +66,7 @@
           $res = $conn->query($sql);
           if ($result = $conn->query($sql)) {
             while ($row = $result->fetch_assoc()) {
-              $tno = $row['tno'];
+              // $tno = $row['tno'];
               $usn = $row["usn"];
               $sname = $row["sname"];
               $branch = $row["branch"];
@@ -77,7 +77,7 @@
               $phone = $row["phone"];
               $arrr[$usn] = $cgpa;
               echo '<tr>
-                      <td>'.$tno.'</td>
+                      
                       <td>'.$usn.'</td>
                       <td>'.$sname.'</td>
                       <td>'.$branch.'</td>

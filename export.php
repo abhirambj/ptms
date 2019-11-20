@@ -1,5 +1,14 @@
 <?php
     include 'config.php';
+    // require 'libs/fpdf.php'; 
+
+    // $pdf = new FPDF('P','mm','A4');
+    // $pdf->AliasNbPages();
+    // $pdf->AddPage();
+    // $pdf->SetFont("Arial",'B',16);
+    // $pdf->Cell(0,20,"Teams",0,0,'C');
+    // $pdf->Output();
+    
     if(isset($_GET['export'])){
         header('Content-type: text/csv; charset=utf-8');
         header('Content-Disposition: attachment; filename=team.csv');

@@ -92,6 +92,9 @@ if (!isset($_SESSION['username'])) {
             </form>
             <form action="edteam.php" method="POST" align="center">
                 <input type="submit" name="team" value="Teams">
+            </form>
+            <form action="skill.php" method="POST" align="center">
+                <input type="submit" name="vs" value="View Students">
             </form> 
         </div>
     </div>
