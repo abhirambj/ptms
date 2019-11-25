@@ -26,7 +26,8 @@ if (isset($_POST['update'])) {
   $second = mysqli_real_escape_string($conn, $_POST['second']);
   $third = mysqli_real_escape_string($conn, $_POST['third']);
   $fourth = mysqli_real_escape_string($conn, $_POST['fourth']);
-  $up = "UPDATE team SET first='$first',second = '$second',third = '$third',fourth = '$fourth' WHERE tid=$tid";
+  $tlead = mysqli_real_escape_string($conn, $_POST['tlead']);
+  $up = "UPDATE team SET first='$first',second = '$second',third = '$third',fourth = '$fourth',tlead = '$tlead' WHERE tid=$tid";
   if(mysqli_query($conn, $up)){
     header('location: team.php');
   }
@@ -44,6 +45,7 @@ if (isset($_GET['edited'])) {
   $second = $row['second'];
   $third = $row['third'];
   $fourth = $row['fourth'];
+  $tlead = $row['tlead'];
 }
 }
 ?>
@@ -68,6 +70,7 @@ if (isset($_GET['edited'])) {
                     <th>Second</th>
                     <th>Third</th>
                     <th>Fourth</th>
+                    <th>Team Leader</th>
                 </tr>
                 <tr>
                     <form  action="editteam.php" method="POST">
@@ -77,12 +80,16 @@ if (isset($_GET['edited'])) {
                     <td><input type="text" name="second" value="<?php echo $second; ?>"></td>
                     <td><input type="text" name="third" value="<?php echo $third; ?>"></td>
                     <td><input type="text" name="fourth" value="<?php echo $fourth; ?>"></td>
+                    <td><input type="text" name="tlead" value="<?php echo $tlead; ?>"></td>
                     <td><input type="submit" value="Update" name="update"></td>
                     </form>
                   </tr>
                 </table>
                 <form action="login.php" align="center">
                   <input class="log" type="submit" value="Logout" name="logout">
+                </form>
+                <form action="team.php" align="center">
+                  <input class="log" type="submit" value="Back" name="back">
                 </form>
         </div>
     </div>

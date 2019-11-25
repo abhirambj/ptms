@@ -81,6 +81,7 @@ if (isset($_SESSION['success'])) {
                     <th>Second</th>
                     <th>Third</th>
                     <th>Fourth</th>
+                    <th>Team Lead</th>
                 </tr>
                 <?php
                 /* include 'config.php'; */
@@ -92,6 +93,7 @@ if (isset($_SESSION['success'])) {
                   $a2=array_search($teams[1][$i], $arrr);
                   $a3=array_search($teams[2][$i], $arrr);
                   $a4=array_search($teams[3][$i], $arrr);
+                  $tlead = array_search($teams[4][$i], $arrr);
                 /*   echo '<tr>
                   <td>'.$tid.'</td>
                   <td>'.$a1.'</td>
@@ -99,7 +101,7 @@ if (isset($_SESSION['success'])) {
                   <td>'.$a3.'</td>
                   <td>'.$a4.'</td>
                   <td><a href="editteam.php?edited=1&id='.$tid.'">Edit</a></td></tr>'; */
-                  $ti="INSERT INTO team(tid,first,second,third,fourth) VALUES('$tid','$a1','$a2','$a3','$a4')";
+                  $ti="INSERT INTO team(tid,first,second,third,fourth,tlead) VALUES('$tid','$a1','$a2','$a3','$a4','$tlead')";
                   if (mysqli_query($conn,$ti)) {
                     echo "<script>alert('Updating...!')</script>";
                     
@@ -115,6 +117,7 @@ if (isset($_SESSION['success'])) {
                   <td>'.$row['second'].'</td>
                   <td>'.$row['third'].'</td>
                   <td>'.$row['fourth'].'</td>
+                  <td>'.$row['tlead'].'</td>;
                   <td><a href="editteam.php?edited=1&id='.$row['tid'].'">Edit</a></td></tr>';
                   }
                 }
